@@ -1,0 +1,53 @@
+ <!DOCTYPE html>
+<html lang="ko" class="asideOpen">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>세부웍WOK 위치안내 - 세부맛집위치,세부로컬음식,세부유명명소</title>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/gmap.css">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/jquery.YJ.datepicker.js"></script>
+    <script src="js/TweenMax.js"></script>
+	<script src="js/jquery.superscrollorama.js"></script>
+    <script src="js/common.js"></script>
+    <?php include 'layout/webmaster.html'; ?>
+
+
+</head>
+<!-- oncontextmenu="return false" ondragstart="return false" onselectstart="return false" -->
+
+<body>
+    <div class="warapper">
+      <?php include 'layout/header.html';?>
+      <?php include 'layout/quick_side.html';?>
+        <div class="container">
+			 <div class="sub_visual sub_visual--store">
+                <div class="title">매장 찾기</div>
+            </div>
+			<div class="store">
+        <div class="gmap" id=gmap></div>
+			</div>
+        </div>
+        <?php include 'layout/footer.html';?>
+        <?php include 'layout/quick_mobile.html';?>
+    </div>
+    <script>
+    function initMap() {
+      // The location of Uluru
+      var uluru = {lat: 10.284499, lng: 123.995771};
+      // The map, centered at Uluru
+      var map = new google.maps.Map(
+        document.getElementById('gmap'), {zoom: 15, center: uluru});
+      // The marker, positioned at Uluru
+      var marker = new google.maps.Marker({position: uluru, map: map});
+    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIUuuM2i3ppd2r1qWXU-mD8kz8-hksB2E&callback=initMap"></script>
+</body>
+
+</html>

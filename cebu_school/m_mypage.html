@@ -1,0 +1,72 @@
+ <? include "head.html" ?>
+ <style>
+ .mypage_left{display: block;}
+ </style>
+</head>
+<body>
+<? include "header.html" ?>
+<div class="container center_970">
+	<? include "mypage_header.html" ?>
+	<script>
+	// 화면 1120px 이상일때 강제 url 넘김
+	$(document).ready(function(){
+		if($(window).width() > 1120){
+		   location.href = "mypage_user.html";
+		}
+	});
+	</script>
+	<div class="mypage_left">
+		<div class="rank_box">
+			<img src="images/sub/rank.png" alt="">
+			<strong class="rank_tit">세부스쿨 랭킹</strong>
+			<p class="rank_result"><span class="rank_num">26,415</span>위<span class="rank_update">930▲</span></p>
+			<p>아이디님은 세부스쿨 상위 <span class="rank_point"> 36.7%</span> 입니다.</p>
+		</div>
+		<script>
+			  var decimal_places = 0;
+			  var decimal_factor = decimal_places === 0 ? 1 : decimal_places * 1000;
+
+			  $('.rank_num').animateNumber(
+				{
+				  number: 26415 * decimal_factor,
+
+				  numberStep: function(now, tween) {
+					var floored_number = Math.floor(now) / decimal_factor,
+						target = $(tween.elem);
+					if (decimal_places > 0) {
+					  floored_number = floored_number.toFixed(decimal_places);
+					}
+
+					target.text(floored_number);
+				  }
+				},
+				{
+				  easing: 'swing',
+				  duration: 5000
+				}
+			  )
+		</script>
+		<div class="sec sec1">
+			<h2 class="tit">소개</h2>
+			<ul class="sec_wrap">
+				<li class="level"><i class="far fa-address-card"></i><img src="images/sub/level_mark.jpg" alt=""><a href="" class="point_color">1레벨(씨앗)</li></a>
+				<li class="point"><i class="fas fa-coins"></i><a href="" class="point_color">568</a> point</li>
+				<li class="history"><i class="far fa-user-circle"></i><a href="" class="point_color">2019. 04. 04</a> 세부 스쿨 가입</li>
+			</ul>
+		</div><!-- sec1 -->
+		<div class="sec sec2">
+			<h2 class="tit">정보</h2>
+			<ul class="sec_wrap">
+				<li><a href="#"><i class="fas fa-th"></i>전체보기</a></li>
+				<li><a href="#"><i class="far fa-file-alt"></i>게시글</a></li>
+				<li><a href="#"><i class="fas fa-comments"></i>댓글</a></li>
+				<li><a href="#"><i class="fas fa-id-badge"></i>스크랩</a></li>
+				<li><a href="#"><i class="fas fa-clipboard-list"></i>이벤트</a></li>
+			</ul>
+		</div><!-- sec2 -->
+		<a href="message4.html" onclick="openWinCenter(this.href,'newwin','width=450,height=580,status=yes,menubar=yes');return false" class="btn_style">쪽지 보내기</a>
+	</div>
+</div><!-- container -->
+<? include "footer.html" ?>
+</body>
+</html>
