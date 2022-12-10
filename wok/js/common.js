@@ -1,5 +1,6 @@
 $(function () {
     function header() {
+        console.log(1333);
         var $header = $('#header');
         var $gnb = $('#gnb > ul');
         var $depth1 = $('#gnb > ul > li');

@@ -1,6 +1,6 @@
 <?php
 
-  $conn = mysqli_connect("localhost", "wokcebu", "k74159300!", "wokcebu");
+  $conn = mysqli_connect("localhost", "username", "password", "wok");
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
